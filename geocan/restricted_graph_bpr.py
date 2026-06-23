@@ -43,7 +43,6 @@ The spectral graph/BPR-style geometric ranking component used for `L_geo` is **n
 
 The omitted component is based on:
 
-```bibtex
 @inproceedings{
 zheng2026graphtheoretic,
 title={Graph-Theoretic Insights into Bayesian Personalized Ranking for Recommendation},
@@ -52,7 +51,7 @@ booktitle={The Thirty-ninth Annual Conference on Neural Information Processing S
 year={2026},
 url={https://openreview.net/forum?id=tmtUA2X57D}
 }
-```
 
 Please contact the original authors for access to the official graph-theoretic BPR / spectral ranking implementation.  
 In this public repository, the code keeps the interface and the hyperbolic node construction pipeline, but the restricted ranking loss itself is replaced with a placeholder.
+'''
