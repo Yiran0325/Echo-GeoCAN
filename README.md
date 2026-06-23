@@ -12,7 +12,7 @@ GeoCAN contains two main components:
 2. **Nonlinear Relational Aggregation (NRA)**  
    It encodes causal-enhanced visual tokens with a Transformer and performs nonlinear token-level residual aggregation using learnable piecewise-linear spline functions.
 
-<img width="2368" height="1072" alt="Fig2-1_GeoCAN" src="https://github.com/user-attachments/assets/b3604bc0-0cf5-42d2-949a-1094bc0299b1" />
+<img width="2381" height="1069" alt="Fig1-1_Overview" src="https://github.com/user-attachments/assets/c2ea2f32-7972-4f4b-988a-95d6af081d7b" />
 
 
 ## Important note about the graph-theoretic ranking loss
