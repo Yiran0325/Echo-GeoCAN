@@ -95,9 +95,19 @@ class GeneralizedLehmerCausalityStable(nn.Module):
         ) + self.eps
         glm_j = torch.log(numerator_j / denominator_j) / (log_alpha + self.eps)
 
-        # Separable approximation for GLM(F_i x F_j).
-        numerator_ij = numerator_j[:, :, None] * numerator_j[:, None, :]
-        denominator_ij = denominator_j[:, :, None] * denominator_j[:, None, :]
+        # Exact element-wise spatial interaction for GLM(F_i * F_j),
+        # matching Eq. (1) in the paper.
+        # pairwise_interaction[:, i, j, s] = F_i(s) * F_j(s)
+        pairwise_interaction = Fv[:, :, None, :] * Fv[:, None, :, :]  # [B,K,K,S]
+        
+        numerator_ij = torch.sum(
+            torch.exp(log_alpha * ((beta + 1.0) * pairwise_interaction)),
+            dim=-1,
+        ) + self.eps
+        denominator_ij = torch.sum(
+            torch.exp(log_alpha * (beta * pairwise_interaction)),
+            dim=-1,
+        ) + self.eps
         glm_ij = torch.log(numerator_ij / denominator_ij) / (log_alpha + self.eps)
 
         causal_map = glm_ij / (glm_j[:, None, :] + self.eps)
