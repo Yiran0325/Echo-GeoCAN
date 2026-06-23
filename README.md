@@ -15,26 +15,6 @@ GeoCAN contains two main components:
 <img width="2381" height="1069" alt="Fig1-1_Overview" src="https://github.com/user-attachments/assets/c2ea2f32-7972-4f4b-988a-95d6af081d7b" />
 
 
-## Important note about the graph-theoretic ranking loss
-
-The spectral graph/BPR-style geometric ranking component used for `L_geo` is **not included in this public release** because its implementation is derived from third-party code that is not permitted to be publicly redistributed.
-
-The omitted component is based on:
-
-```bibtex
-@inproceedings{
-zheng2026graphtheoretic,
-title={Graph-Theoretic Insights into Bayesian Personalized Ranking for Recommendation},
-author={Kai Zheng and Jianxin Wang and Jinhui Xu},
-booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
-year={2026},
-url={https://openreview.net/forum?id=tmtUA2X57D}
-}
-```
-
-Please contact the original authors for access to the official graph-theoretic BPR / spectral ranking implementation.  
-In this public repository, the code keeps the interface and the hyperbolic node construction pipeline, but the restricted ranking loss itself is replaced with a placeholder.
-
 ## Repository structure
 
 ```text
